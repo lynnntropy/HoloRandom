@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true" >
+
+    <TextView
+        android:id="@+id/numberDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="0"
+        android:textSize="150sp"
+        android:textColor="#ff33b5e5" />
+
+        <requestFocus />
+
+        <Button
+            android:id="@+id/fromMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="-"
+            android:onClick="decrementFromField" />
+
+        <EditText
+            android:id="@+id/fromNumberField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fromMinus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/fromPlus"
+            android:ems="3"
+            android:inputType="numberDecimal"
+            android:gravity="center_horizontal" />"
+
+        <EditText
+            android:id="@+id/toNumberField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/toPlus"
+            android:layout_alignLeft="@+id/toMinus"
+            android:layout_alignParentRight="true"
+            android:ems="3"
+            android:inputType="numberDecimal"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/fromPlus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/fromMinus"
+            android:text="+"
+            android:onClick="incrementFromField" />
+
+        <Button
+            android:id="@+id/toPlus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="+"
+            android:onClick="incrementToField" />
+
+        <Button
+            android:id="@+id/toMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/toPlus"
+            android:text="-"
+            android:onClick="decrementToField" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fromNumberField"
+            android:layout_alignRight="@+id/fromNumberField"
+            android:layout_marginRight="29dp"
+            android:text="From:" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/toNumberField"
+            android:layout_alignLeft="@+id/toNumberField"
+            android:layout_marginLeft="38dp"
+            android:text="To:" />
+
+        <Button
+            android:id="@+id/generateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Generate!"
+            android:onClick = "generateNumber" />
+
+</RelativeLayout>
